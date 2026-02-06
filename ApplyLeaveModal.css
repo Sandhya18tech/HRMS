@@ -1,0 +1,234 @@
+.modal-overlay-leave {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.apply-leave-modal {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: modalSlideIn 0.3s ease-out;
+  position: relative;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-btn-leave {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6b7280;
+  z-index: 100;
+  transition: all 0.2s;
+}
+
+.close-btn-leave:hover {
+  background: white;
+  color: #1f2937;
+  border-color: #9ca3af;
+}
+
+.close-btn-leave svg {
+  width: 16px;
+  height: 16px;
+}
+
+.leave-modal-header {
+  padding: 24px 24px 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.leave-modal-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.leave-modal-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.leave-form {
+  padding: 24px;
+}
+
+.error-message-leave {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 1px solid #fecaca;
+}
+
+.form-group-leave {
+  margin-bottom: 20px;
+}
+
+.form-group-leave label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.label-icon {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.required {
+  color: #dc2626;
+}
+
+.date-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.leave-select,
+.leave-input,
+.leave-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1f2937;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.leave-select:focus,
+.leave-input:focus,
+.leave-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.leave-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.days-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.days-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.days-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.leave-modal-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-cancel-leave,
+.btn-submit-leave {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-cancel-leave {
+  background: white;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+}
+
+.btn-cancel-leave:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.btn-submit-leave {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-submit-leave:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.btn-cancel-leave:disabled,
+.btn-submit-leave:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .date-row {
+    grid-template-columns: 1fr;
+  }
+
+  .apply-leave-modal {
+    max-width: 100%;
+    margin: 10px;
+  }
+}
+
